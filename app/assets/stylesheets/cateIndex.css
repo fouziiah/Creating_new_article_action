@@ -1,0 +1,63 @@
+/* app/assets/stylesheets/cateIndex.css */
+
+.CateContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .CateContainer h1 {
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  .CateContainer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .CateContainer li {
+    margin-bottom: 15px;
+  }
+  
+  .CateContainer a {
+    color: #4d89a5; /* A muted blue color */
+    text-decoration: none;
+  }
+  
+  .CateContainer a:hover {
+    text-decoration: underline;
+  }
+  
+  .CateContainer .italicized {
+    font-style: italic;
+    color: #666666;
+  }
+  
+  .CateContainer .category-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .CateContainer .category-actions li {
+    display: inline-block;
+  }
+  
+  .CateContainer .category-actions a {
+    background-color: #4d89a5; /* A muted blue color */
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .CateContainer .category-actions a:hover {
+    background-color: #396e8f; /* A slightly darker shade on hover */
+  }
+  
