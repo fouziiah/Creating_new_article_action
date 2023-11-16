@@ -23,13 +23,13 @@ class CategoriesController < ApplicationController
   end
 
 def edit
-  @category = category.find([:id])
+  @category = Category.find(params[:id])
 
 end
   def update
     @category = Category.find(params[:id])
     if @category.update(category_params)
-      redirect_to @category, notice: 'Category was successfully updated.'
+      redirect_to category_path(@category), notice: 'Category was successfully updated.'
     else
       render :edit
     end
