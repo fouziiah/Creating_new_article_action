@@ -1,3 +1,8 @@
+<header> 
+<% stylesheet_link_tag 'donationNew.css' %>
+</header>
+
+<div class="donation-container">
 <h1>Make a Donation</h1>
 
 <%= form_with(model: @donation, url: donations_path, 
@@ -32,3 +37,4 @@ method: 'post', local: true, id: 'donation-form') do |
         <button id="donate-button" class="btn btn-primary"> Donate </button>
 
         <% end %>
+</div>

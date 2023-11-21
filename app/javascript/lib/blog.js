@@ -18,11 +18,22 @@ $(function(){
         });
 
         $('#load-comments').on('click', function (){
-            const url = '/categories/1/articles/4/comments';
-            console.log($.getJSON(url));
-            $.getJSON(url, function(data){
+            const categoryId = $('#category-id').data('category');
+            const articleId = $('#load-comments').data('article');
+            // console.log(articleId)
+            // console.log(categoryId)
+
+            const url = `/categories/${categoryId}/articles/${articleId}/comments`;
+
+        
+            $.getJSON(url, function(data) {
                 console.log(data);
-            })
+            
+                data.forEach(function(comment) {
+                    $('#comments').append('<div>' + comment.body + '</div>');
+                });
+            });
+            
         });
     
 });

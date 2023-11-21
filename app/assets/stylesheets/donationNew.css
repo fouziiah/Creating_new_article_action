@@ -2,5 +2,12 @@ body{
     background-color: bisque;
 }
 
-/* .card-container{
-} */
+.donation-container{
+    font-size: 30px;
+}
+
+.card-container{
+    background-color: #f4f4f4;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
