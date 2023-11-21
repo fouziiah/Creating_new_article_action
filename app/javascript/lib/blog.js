@@ -32,8 +32,15 @@ $(function(){
                 data.forEach(function(comment) {
                     $('#comments').append('<div>' + comment.body + '</div>');
                 });
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                console.error('Ajax error:', errorThrown);
+                alert('Failed to load comments.');
             });
             
         });
+        $('#like').on('click', function (){
+            
+        })
     
 });

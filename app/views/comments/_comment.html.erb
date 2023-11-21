@@ -8,12 +8,14 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
+  
 
   <p>
   <%= link_to "Delete Comment", category_article_comment_path(@category, @article, comment), data: {
     turbo_method: :delete,
     turbo_confirm: "Are you sure?"
   } %>
+  <button id="like">Like Comment</button>
 </p>
 <% end %>
 
