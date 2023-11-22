@@ -1,5 +1,4 @@
 namespace :db do
-    #stars with a description, plain english
     desc "Add four categories to the database"
     #when it starts executing by using task 
     task add_categories: :environment do 

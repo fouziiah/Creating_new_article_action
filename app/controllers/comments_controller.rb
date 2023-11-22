@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
-  
+  before_action :authenticate_user!, only: [:destroy]
+
   def index
     @comments = Comment.where(article_id: params[:article_id])
 
@@ -10,9 +10,11 @@ class CommentsController < ApplicationController
   end
 
   def create
+    # if !user_signed_in?
+    #   @comment = Comment.user.create
+
     @category = Category.find(params[:category_id])
     @article = Article.find(params[:article_id])
-
     @comment = @article.comments.create(comment_params)
 
     redirect_to category_article_path(@category, @article)

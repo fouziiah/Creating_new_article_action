@@ -1,24 +1,40 @@
 <!-- app/views/categories/index.html.erb -->
-<div class="CateContainer">
-<h1>Categories</h1>
-<ul>
-  <% @categories.each do |category| %>
-    <li>
-      <%= link_to category.name, category %>
-      <% if category.description.present? %>
-        <p class="italicized"><%= category.description %></p>
-      <% end %>
-      <ul  class="category-actions">
+
+<% if user_signed_in? %>
+  <h1>Categories</h1>
+  <ul>
+    <% @categories.each do |category| %>
+      <li>
+        <%= link_to category.name, category %>
+        <% if category.description.present? %>
+          <p class="italicized"><%= category.description %></p>
+        <% end %>
+        <ul class="category-actions">
+          <li><%= link_to "Edit", edit_category_path(category) %></li>
+          <li><%= link_to "Delete", category_path(category), method: :delete, data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+          } %></li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to 'New category', new_category_path %>
+
+<% else %>
+<% @categories.each do |category| %>
+  <li>
+    <%= link_to category.name, category %>
+    <% if category.description.present? %>
+      <p class="italicized"><%= category.description %></p>
+    <% end %>
+    <ul class="category-actions">
       <li><%= link_to "Edit", edit_category_path(category) %></li>
       <li><%= link_to "Delete", category_path(category), method: :delete, data: {
         turbo_method: :delete,
         turbo_confirm: "Are you sure?"
       } %></li>
-
-
     </ul>
-    </li>
-  <% end %>
-</ul>
-<%= link_to 'New category', new_category_path %>
-</div>
+  </li>
+<% end %>
+<% end %>
