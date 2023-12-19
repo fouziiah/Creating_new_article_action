@@ -8,4 +8,6 @@ class Article < ApplicationRecord
   validates :body, presence: true, length: { minimum: 10 }
   
   validates :category, presence: true
+
+
 end
